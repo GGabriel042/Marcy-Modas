@@ -1,0 +1,101 @@
+@use '../custom';
+
+.container-slider{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 4rem;
+  width: 940px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+
+  .slider {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    height: 430px;
+    scroll-behavior: smooth;
+
+    &-item {
+      position: relative;
+      margin-right: 3.3%;
+      height: 100%;
+
+      &:first-child {
+        margin-left: 3.3%;
+      }
+
+      img{
+        width: 275px;
+        height: 400px;
+        object-fit: cover;
+        box-shadow: 4px 4px 8px rgba($black, 0.5);
+      }
+
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        background-color: transparent;
+        border: none;
+        color: $white;
+        opacity: 0;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 400px;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        
+
+        .slider-btn {
+          opacity: 1;
+          z-index: 5;
+        }
+
+        &::after {
+          opacity: 0.6;
+        }
+      }
+
+    }
+  }
+
+
+  .arrow {
+    position: absolute;
+    color: $red-7;
+    font-size: 3rem;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.fa-angles-left {
+      left: -4rem;
+    }
+    &.fa-angles-right {
+      right: -4rem;
+    }
+
+
+    &:hover {
+      font-size: 4rem;
+      color: $red-5;
+    }
+  }
+
+}
