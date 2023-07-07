@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: $red-7;
+  box-shadow: $boxShadow;
 
   .logo {
     height: 100%;
@@ -38,7 +39,7 @@
 
       &:hover, &:focus {
         background-color: rgba($white, 0.8);
-        text-shadow: $textShadow;
+        text-shadow: 2px 2px 6px rgba($black, 0.3);
       }
     }
 
@@ -151,5 +152,52 @@
         }
       }
     }
+  }
+}
+
+
+.side-menu {
+  display: none;
+  position: absolute;
+  background-color: $red-1;
+  width: 30%;
+  height: 60%;
+  right: 0;
+  border-bottom-left-radius: 32px;
+  box-shadow: $boxShadow;
+  transition: display 0.5s ease-in-out;
+
+  &-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid $white;
+    border-bottom-left-radius: 16px;
+    margin-top: 1rem;
+
+    &-item {
+      margin-bottom: 1rem;
+
+      a{
+        font-size: 2rem;
+        color: $white;
+        text-decoration: none;
+        text-shadow: 2px 2px 4px rgba($black, 0.7);
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          font-size: 2.2rem;
+          color: $gray-1;
+        }
+      }
+    }
+  }
+
+  &.active {
+    transition: display 0.5s ease-in-out;
+    display: block;
   }
 }

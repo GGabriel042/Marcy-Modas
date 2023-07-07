@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #800000;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 .nav .logo {
   height: 100%;
@@ -132,4 +133,45 @@
 .nav-link-menu.open .menu-btn::before {
   width: 120%;
   transform: rotate(-45deg) translate(-0.9rem, 0.2rem);
+}
+
+.side-menu {
+  display: none;
+  position: absolute;
+  background-color: #FF9494;
+  width: 30%;
+  height: 60%;
+  right: 0;
+  border-bottom-left-radius: 32px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: display 0.5s ease-in-out;
+}
+.side-menu-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #fff;
+  border-bottom-left-radius: 16px;
+  margin-top: 1rem;
+}
+.side-menu-list-item {
+  margin-bottom: 1rem;
+}
+.side-menu-list-item a {
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  text-decoration: none;
+}
+.side-menu-list-item a:hover {
+  font-size: 2.2rem;
+  color: #C5C5C5;
+}
+.side-menu.active {
+  transition: display 0.5s ease-in-out;
+  display: block;
 }/*# sourceMappingURL=main.min.css.map */
